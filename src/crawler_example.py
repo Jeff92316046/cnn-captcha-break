@@ -36,9 +36,9 @@ def find_next_img_number():
 
 def scarpying(stock_list: list[str]):
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(URL)
     counter = 0
     while counter < len(stock_list):
+        driver.get(URL)
         driver.implicitly_wait(5)
         img = driver.find_element(
             By.XPATH,
@@ -66,6 +66,7 @@ def scarpying(stock_list: list[str]):
             By.XPATH,
             '//*[@id="Panel_bshtm"]/table/tbody/tr/td/table/tbody/tr[1]/td/div/div[2]/input',
         )
+        captcha_input.clear()
         captcha_input.send_keys(predicted_string)
         print(predicted_string)
         time.sleep(2)
@@ -82,7 +83,6 @@ def scarpying(stock_list: list[str]):
             counter += 1
         except NoSuchElementException:
             continue
-        driver.refresh()
 
 
 scarpying(["0050", "0051"])
