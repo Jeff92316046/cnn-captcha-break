@@ -6,6 +6,7 @@ __pycache__/
 # C extensions
 *.so
 *.pth
+!captcha_crnn_best_model.pth
 temp.png
 # Distribution / packaging
 .Python
