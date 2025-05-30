@@ -12,4 +12,19 @@ dependencies = [
     "ruff>=0.11.11",
     "selenium>=4.33.0",
     "tqdm>=4.67.1",
+    "torch>=2.7.0",
+    "torchvision>=0.22.0",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu126" },
+]
+torchvision = [
+    { index = "pytorch-cu126" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
